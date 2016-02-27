@@ -1,7 +1,4 @@
 <!--DOCTYPE html-->
-<?php 
-    date_default_timezone_set("Asia/Taipei");
-?>
 <html>
     <head>
         <title>Cliff Game Design</title>
@@ -29,30 +26,6 @@
     <body class = fixedbackground onload = "Histroy(); Year(); Month(); Day(); Hour(); Minute()">
         <h1 id = "h1" class = "center">-----------Welcome&nbspto&nbspCGD-----------</h1>
         <div id = "login_div" class = "login" style = "z-index : 1">
-        <form name = "login" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post"  class = "center">
-                <p class = "item">CGD&nbspAccount&nbsp:</p>
-                <input type = "text" name = "account" id = "account" maxlength = "20" class = "info"/>
-                <br />
-                <p class = "item">Password&nbsp:</p>
-                <input type = "password" name = "password" id = "password" maxlength = "20" class = "info"/>
-                <br />
-                <br />
-                <input type = "button" id = "log_button"  value = "Login" style = "cursor : pointer" class = "button"
-                onclick = "Login()"
-                onmousedown = "document.getElementById('log_button').style.color = 'red'" 
-                onmouseup = "document.getElementById('log_button').style.color = 'black'" 
-                onmouseout = "document.getElementById('log_button').style.color = 'black'"/> <!--接收使用者登入資料-->
-                <input type = "reset" id = "reset" value = "Reset" style = "cursor : pointer" class = "button"
-                onmousedown = "document.getElementById('reset').style.color = 'red'" 
-                onmouseup = "document.getElementById('reset').style.color = 'black'" 
-                onmouseout = "document.getElementById('reset').style.color = 'black'"/> <!--清除使用者資料-->
-                <input type = "button" id = "sign" value = "Sign up" style = "cursor : pointer" class = "button" 
-                onclick = "IdAttribute('sign_div' ,'1', '600px', '350px', '0px', '0px'); 
-                            IdAttribute('login_div' ,'1', '400px', '275px', '-350px', '0px')"
-                onmousedown = "document.getElementById('sign').style.color = 'red'" 
-                onmouseup = "document.getElementById('sign').style.color = 'black'" 
-                onmouseout = "document.getElementById('sign').style.color = 'black'" /> <!--轉向使用者註冊-->
-            </form> 
         </div>
 
         <div id = "sign_div" class = "sign" style = "z-index : 2">
