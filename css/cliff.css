@@ -1,5 +1,5 @@
             .fixedbackground{
-                background : url(../image/CGD.png);
+                background : url(http://tommyboys0107.github.io//image/CGD.png);
                 background-repeat : repeat;
                 background-attachment : fixed;                
             }
@@ -169,7 +169,7 @@
             }
 
             div.game{
-                background : url(../image/warning.jpg);
+                background : url(http://tommyboys0107.github.io//image/warning.jpg);
                 border-radius : 40px;
                 border : 4px outset #7788FF;
                 box-shadow : 0px 0px 30px #7788FF;
