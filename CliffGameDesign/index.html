@@ -1,0 +1,312 @@
+<!--DOCTYPE html-->
+<?php 
+    date_default_timezone_set("Asia/Taipei");
+?>
+<html>
+    <head>
+        <title>Cliff Game Design</title>
+
+        <base href = "http://localhost:81"/>
+
+        <meta name = "keywords"     content = "Cliff Game Design">
+        <meta name = "description"  content = "Cliff Game Design Web">
+        <meta name = "revised"      content = "12/21/2013 1st">
+        <meta name = "author"       content = "Cliff Lee">
+        <meta http-equiv="Content-Type" content="text/html charset = utf-8">
+        <!--<meta http-equiv = "refresh" content = "120">-->
+
+        <link href='http://fonts.googleapis.com/css?family=Fugaz+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
+        <link href="css/cliff.css"  rel = "stylesheet" type = "text/css">
+
+    </head>
+
+    <script src = "javascript/div.js"></script>
+    <script src = "javascript/select_time.js"></script>
+    <script src = "javascript/xmlhttp.js"></script>
+    <script src = "javascript/button.js"></script>
+
+    <body class = fixedbackground onload = "Histroy(); Year(); Month(); Day(); Hour(); Minute()">
+        <h1 id = "h1" class = "center">-----------Welcome&nbspto&nbspCGD-----------</h1>
+        <div id = "login_div" class = "login" style = "z-index : 1">
+        <form name = "login" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post"  class = "center">
+                <p class = "item">CGD&nbspAccount&nbsp:</p>
+                <input type = "text" name = "account" id = "account" maxlength = "20" class = "info"/>
+                <br />
+                <p class = "item">Password&nbsp:</p>
+                <input type = "password" name = "password" id = "password" maxlength = "20" class = "info"/>
+                <br />
+                <br />
+                <input type = "button" id = "log_button"  value = "Login" style = "cursor : pointer" class = "button"
+                onclick = "Login()"
+                onmousedown = "document.getElementById('log_button').style.color = 'red'" 
+                onmouseup = "document.getElementById('log_button').style.color = 'black'" 
+                onmouseout = "document.getElementById('log_button').style.color = 'black'"/> <!--接收使用者登入資料-->
+                <input type = "reset" id = "reset" value = "Reset" style = "cursor : pointer" class = "button"
+                onmousedown = "document.getElementById('reset').style.color = 'red'" 
+                onmouseup = "document.getElementById('reset').style.color = 'black'" 
+                onmouseout = "document.getElementById('reset').style.color = 'black'"/> <!--清除使用者資料-->
+                <input type = "button" id = "sign" value = "Sign up" style = "cursor : pointer" class = "button" 
+                onclick = "IdAttribute('sign_div' ,'1', '600px', '350px', '0px', '0px'); 
+                            IdAttribute('login_div' ,'1', '400px', '275px', '-350px', '0px')"
+                onmousedown = "document.getElementById('sign').style.color = 'red'" 
+                onmouseup = "document.getElementById('sign').style.color = 'black'" 
+                onmouseout = "document.getElementById('sign').style.color = 'black'" /> <!--轉向使用者註冊-->
+            </form> 
+        </div>
+
+        <div id = "sign_div" class = "sign" style = "z-index : 2">
+            <form name = "sign" action = "index.php" method = "post" class = "right">
+                (*must)&nbsp*CGD&nbspAccount&nbsp:&nbsp<input type = "text" name = "sign_account" id = "sign_account" maxlength = "20" class = "info"/>
+                <br />
+                *Password&nbsp:&nbsp<input type = "password" name = "sign_password" id = "sign_password" maxlength = "20" class = "info"/>
+                <br />
+                *Password confirm&nbsp:&nbsp<input type = "password" name = "sign_confirm" id = "sign_confirm" maxlength = "20" class = "info"/>
+                <br />
+                *First name&nbsp:&nbsp<input type = "text" name = "first_name" id = "first_name"  maxlength = "20" class = "info"/>
+                <br />
+                *Last name&nbsp:&nbsp<input type = "text" name = "last_name" id = "last_name" maxlength = "20" class = "info"/>
+                <br />
+                Nickname&nbsp:&nbsp<input type = "text" name = "nickname" id = "nickname" maxlength = "20" class = "info"/>
+                <br />
+                *E-mail&nbsp:&nbsp<input type = "text" name = "email" id = "email" maxlength = "30" class = "info"/>
+                <br />
+                *Sex&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type = "radio" name = "sex" value = "male"/>&nbsp&nbspMale&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type = "radio" name = "sex" value = "female"/>&nbsp&nbspFemale&nbsp&nbsp&nbsp&nbsp&nbsp
+                <br />
+                <input type = "button" id = "confirm"  value = "Confirm" style = "cursor : pointer" class = "button" 
+                onclick = "Sign()
+                            /*IdAttribute('sign_div' ,'0', '0px', '0px', '0px', '0px'); 
+                            IdAttribute('login_div' ,'1', '400px', '300px', '350px', '0px')*/"
+                onmousedown = "document.getElementById('confirm').style.color = 'red'" 
+                onmouseup = "document.getElementById('confirm').style.color = 'black'" 
+                onmouseout = "document.getElementById('confirm').style.color = 'black'"
+                />
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*Birth&nbsp:&nbsp&nbsp
+                <select id = "year" name = "year">
+                    <option value = "year" selected>Year</option>
+                </select>
+                <select id = "month" name = "month">
+                    <option value = "month" selected>Month</option>
+                </select>
+                <select id = "day" name = "day">
+                    <option value = "day" selected>Day</option>
+                </select>
+                <br />
+            </form>
+        </div>
+
+        <div id = "player_div" class = "player">
+            <form>
+                <input type = "button" id = "play" value = "Game" style = "cursor : pointer" class = "button"
+                onclick = "Game()"
+                onmousedown = "document.getElementById('play').style.color = 'red'" 
+                onmouseup = "document.getElementById('play').style.color = 'black'" 
+                onmouseout = "document.getElementById('play').style.color = 'black'"
+                />
+                <input type = "button" id = "rank" value = "Rank" style = "cursor : pointer" class = "button"
+                onclick = "Rank()"
+                onmousedown = "document.getElementById('rank').style.color = 'red'" 
+                onmouseup = "document.getElementById('rank').style.color = 'black'" 
+                onmouseout = "document.getElementById('rank').style.color = 'black'"
+                />
+                <input type = "button" id = "profile" value = "Profile" style = "cursor : pointer" class = "button"
+                onclick = "Profile()"
+                onmousedown = "document.getElementById('profile').style.color = 'red'" 
+                onmouseup = "document.getElementById('profile').style.color = 'black'" 
+                onmouseout = "document.getElementById('profile').style.color = 'black'"
+                />
+                <input type = "button" id = "logout" value = "Logout" style = "cursor : pointer" class = "button"
+                onclick = "Logout()"
+                onmousedown = "document.getElementById('logout').style.color = 'red'" 
+                onmouseup = "document.getElementById('logout').style.color = 'black'" 
+                onmouseout = "document.getElementById('logout').style.color = 'black'"
+                />
+
+            </form>
+        </div>
+
+        <div id = "mgr_div" class = "mgr">
+            <form>
+                <input type = "button" id = "freeze" value = "Freeze" style = "cursor : pointer" class = "button"
+                onclick = "Freeze()"
+                onmousedown = "document.getElementById('freeze').style.color = 'red'" 
+                onmouseup = "document.getElementById('freeze').style.color = 'black'" 
+                onmouseout = "document.getElementById('freeze').style.color = 'black'"
+                />
+            </form>
+        </div>
+
+        <div id = "admin_div" class = "admin">
+            <form>
+                <input type = "button" id = "sql" value = "SQL" style = "cursor : pointer" class = "button"
+                onclick = "Sql()"
+                onmousedown = "document.getElementById('set_mgr').style.color = 'red'" 
+                onmouseup = "document.getElementById('set_mgr').style.color = 'black'" 
+                onmouseout = "document.getElementById('set_mgr').style.color = 'black'"
+                />
+            </form>
+        </div>
+
+        <div id = "sql_div" class = "admin_div">
+            <form>
+                <textarea name ="sql_input" id = "sql_input" rows = "12" cols = "46">
+                </textarea>
+                <input type = "button" id = "query" value = "Query" style = "cursor : pointer" class = "button"
+                    onclick = "Sql_query()"
+                    onmousedown = "document.getElementById('query').style.color = 'red'" 
+                    onmouseup = "document.getElementById('query').style.color = 'black'" 
+                    onmouseout = "document.getElementById('query').style.color = 'black'"
+                    />
+            </form>
+        </div>
+
+        <div id = "profile_div" class = "player_div">
+                <div id = "profile_item">
+                    <p class = "item">Account&nbsp:&nbsp</p>
+                    <p class = "item">First&nbspname&nbsp:&nbsp</p>
+                    <p class = "item">Last&nbspname&nbsp:&nbsp</p>
+                    <p class = "item">Nickname&nbsp:&nbsp</p>
+                    <p class = "item">E-mail&nbsp:&nbsp</p>
+                    <p class = "item">Sex&nbsp:&nbsp</p>
+                    <p class = "item">Birth&nbsp:&nbsp</p>
+                </div>
+                <form>
+                    <div class = "right">
+                        <input type = "button" id = "edit_button" value = "Edit" style = "cursor : pointer" class = "button"
+                        onclick = "Profile_edit()"
+                        onmousedown = "document.getElementById('edit_button').style.color = 'red'" 
+                        onmouseup = "document.getElementById('edit_button').style.color = 'black'" 
+                        onmouseout = "document.getElementById('edit_button').style.color = 'black'"
+                        />
+                    </div>
+                </form>
+        </div>
+
+        <div id = "edit_div" class = "player_div">
+            <form name = "edit" action = "index.php" method = "post" class = "right">
+                *Password&nbsp:&nbsp<input type = "password" name = "edit_password" id = "edit_password" maxlength = "20" class = "info"/>
+                <br />
+                *Password confirm&nbsp:&nbsp<input type = "password" name = "edit_confirm" id = "edit_confirm" maxlength = "20" class = "info"/>
+                <br />
+                *First name&nbsp:&nbsp<input type = "text" name = "edit_first_name" id = "edit_first_name"  maxlength = "20" class = "info"/>
+                <br />
+                *Last name&nbsp:&nbsp<input type = "text" name = "edit_last_name" id = "edit_last_name" maxlength = "20" class = "info"/>
+                <br />
+                Nickname&nbsp:&nbsp<input type = "text" name = "edit_nickname" id = "edit_nickname" maxlength = "20" class = "info"/>
+                <br />
+                *E-mail&nbsp:&nbsp<input type = "text" name = "edit_email" id = "edit_email" maxlength = "30" class = "info"/>
+                <br />
+                *Sex&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type = "radio" name = "edit_sex" value = "male"/>&nbsp&nbspMale&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type = "radio" name = "edit_sex" value = "female"/>&nbsp&nbspFemale&nbsp&nbsp&nbsp&nbsp&nbsp
+                <br />
+                <input type = "button" id = "edit_confirm_button"  value = "Confirm" style = "cursor : pointer" class = "button" 
+                onclick = "Edit()"
+                onmousedown = "document.getElementById('edit_confirm_button').style.color = 'red'" 
+                onmouseup = "document.getElementById('edit_confirm_button').style.color = 'black'" 
+                onmouseout = "document.getElementById('edit_confirm_button').style.color = 'black'"
+                />
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp*Birth&nbsp:&nbsp&nbsp
+                <select id = "edit_year" name = "edit_year">
+                    <option value = "year" selected>Year</option>
+                </select>
+                <select id = "edit_month" name = "edit_month">
+                    <option value = "month" selected>Month</option>
+                </select>
+                <select id = "edit_day" name = "edit_day">
+                    <option value = "day" selected>Day</option>
+                </select>
+                <br />
+            </form>
+        </div>
+
+        <div id = "game_div" class = "player_div">
+                Game&nbspname&nbsp:&nbsp<br />
+                Develop&nbspteam&nbsp:&nbsp<br />
+                Version&nbsp:&nbsp<br />
+        </div>
+    
+        <div id = "freeze_div" class = "mgr_div">
+            <p class = "item">*Player&nbspaccount&nbsp:&nbsp</p>
+                <select id = "freeze_account" name = "freeze_account">
+                    <option value = "" selected>Account</option>
+                </select>
+                <br />
+            <p class = "item">*Unfreeze&nbspdate&nbsp(until)&nbsp:&nbsp</p>
+                <select id = "freeze_year" name = "freeze_year">
+                    <option value = "year" selected>Year</option>
+                </select>
+                <select id = "freeze_month" name = "freeze_month">
+                    <option value = "month" selected>Month</option>
+                </select>
+                <select id = "freeze_day" name = "freeze_day">
+                    <option value = "day" selected>Day</option>
+                </select>
+                <select id = "freeze_hour" name = "freeze_hour">
+                    <option value = "hour" selected>Hour</option>
+                </select>
+                <select id = "freeze_minute" name = "freeze_minute">
+                    <option value = "minute" selected>Minute</option>
+                </select>
+                <br />
+            <p class = "item">*Reason&nbsp:&nbsp</p>
+                <input type = "text" name = "freeze_reason" id = "freeze_reason" maxlength = "50" class = "reason"/>
+            <div class = "right">
+                <input type = "button" name = "freeze_confirm" id = "freeze_confirm" class = "button" value = "Confirm" style = "cursor : pointer"
+                onclick = "Freeze_confirm()"
+                onmousedown = "document.getElementById('freeze_confirm').style.color = 'red'" 
+                onmouseup = "document.getElementById('freeze_confirm').style.color = 'black'" 
+                onmouseout = "document.getElementById('freeze_confirm').style.color = 'black'"
+                />
+            </div>            
+        </div>
+
+        <div id = "vicious_spiral" class = "game">
+            <br />
+            <p class = "item">Only for test now.</p>
+            <p class = "item">The game is not avaliable yet.</p>
+            <br />
+                <p class = "item">Mode&nbsp:&nbsp&nbsp&nbspArea&nbsp:&nbspMission&nbsp:&nbspState&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRank&nbsp:&nbsp</p>         
+                <select id = "mode" name = "mode">
+                    <option value = "story" selected>Story</option>
+                    <option value = "free" >Free</option>
+                </select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <select id = "area" name = "area">
+                    <option value = "1" selected>1</option>
+                    <option value = "2" >2</option>
+                </select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <select id = "mission" name = "mission">
+                    <option value = "1" selected>1</option>
+                    <option value = "2" >2</option>
+                    <option value = "3" >3</option>
+                    <option value = "4" >4</option>
+                </select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <select id = "state" name = "state">
+                    <option value = "clear" selected>Clear</option>
+                    <option value = "compelete" >Compelete</option>
+                </select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <select id = "stage_rank" name = "stage_rank">
+                    <option value = "S" selected>S</option>
+                    <option value = "A" >A</option>
+                    <option value = "B" >B</option>
+                    <option value = "C" >C</option>
+                    <option value = "D" >D</option>
+                </select>
+                <br />
+                <p class = "item">Score&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspExploit&nbsp:</p>
+                <input type = "text" name = "score" id = "score" maxlength = "20" class = "info" value = "score"/>
+                <input type = "text" name = "exploit" id = "exploit" maxlength = "20" class = "info" value = "exploit"/>
+                <br />
+                <input type = "button" name = "send" id = "send" class = "button" value = "Send" style = "cursor : pointer"
+                onclick = "Stage()"
+                onmousedown = "document.getElementById('send').style.color = 'red'" 
+                onmouseup = "document.getElementById('send').style.color = 'black'" 
+                onmouseout = "document.getElementById('send').style.color = 'black'"
+                />
+        </div>
+
+        <div id = "rank_div">   
+        </div>
+    </body>
+
+</html>
