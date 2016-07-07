@@ -29,12 +29,10 @@ nav ul{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	position: fixed;
 }
 
 nav li{
 	display: inline-block;
-	float: left;
 }
 
 a{
