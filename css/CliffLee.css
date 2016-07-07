@@ -33,14 +33,14 @@ nav ul{
 }
 
 nav li{
-	display: inline;
+	display: inline-block;
 	float: left;
 }
 
 a{
 	border: 2px solid #ffffff;
 	color: #FFDA88;
-	display: inline;
+	display: inline-block;
 	text-align: center;
 	text-decoration: none;
 	padding: 12px;
