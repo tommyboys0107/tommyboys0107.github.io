@@ -22,6 +22,7 @@ h1{
 
 nav{
 	margin: auto;
+	float: right;
 }
 
 nav ul{
