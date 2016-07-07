@@ -40,7 +40,7 @@ nav li{
 a{
 	border: 2px solid #ffffff;
 	color: #FFDA88;
-	display: block;
+	display: inline;
 	text-align: center;
 	text-decoration: none;
 	padding: 12px;
@@ -74,11 +74,6 @@ span.important{
 
 .right{
 	text-align: right;
-}
-
-div{
-	font-family: "Iceland";
-	transition: width 0.5s, height 0.5s, transform 1s, opacity 1s;
 }
 
 textarea{
