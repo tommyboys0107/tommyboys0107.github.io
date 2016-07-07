@@ -1,257 +1,107 @@
 .fixedbackground{
-	background : url(https://tommyboys0107.github.io/image/CGD.png);
-	background-repeat : repeat;
-	background-attachment : fixed;                
+	background: url(https://tommyboys0107.github.io/image/CGD.png);
+	background-repeat: repeat;
+	background-attachment: fixed;                
 }
 
 body{
-	background-color : #2E2E2E;
-	background-repeat : repeat;
-	background-attachment : scroll;       
+	background-color: #2E2E2E;
+	background-repeat: repeat;
+	background-attachment: scroll;       
 }
 
 h1{
-	font-family : "Iceland";
-	font-size : 100px;
-	font-style : normal;
-	color : #97E5FF;
-	text-shadow : 4px 4px 8px #97E5FF;
+	font-family: "Iceland";
+	font-size: 100px;
+	font-style: normal;
+	color: #97E5FF;
+	text-shadow: 4px 4px 8px #97E5FF;
 }
 
 p{
-	font-family : "Iceland";
-	word-wrap : break-word;
-	color : #FFDA8B;
+	font-family: "Iceland";
+	word-wrap: break-word;
+	color: #FFDA8B;
 }
 
-p.important{
-	color : #FF8A8A;
-	font-size : 35px;
-	margin-top : 10px;
-	margin-bottom : 10px;
-	text-shadow: 0px 0px 15px #00E6E6;
+span.important{
+	color: #FF8A8A;
 }
 
 .center{
-	text-align : center;        
+	text-align: center;        
 }
 
 .left{
-	text-align : left;
+	text-align: left;
 }
 
 .right{
-	text-align : right;
+	text-align: right;
 }
 
 div{
-	font-family : "Iceland";
-	-webkit-transition : width 0.5s, height 0.5s, -webkit-transform 1s, -webkit-opacity 1s;
+	font-family: "Iceland";
+	transition: width 0.5s, height 0.5s, transform 1s, opacity 1s;
 }
-
-div.login{
-	background : -webkit-linear-gradient(gray, rgba(0,0,0,0.5));
-	border-radius : 40px;
-	border : 4px outset #a1a1a1;
-	box-shadow : 0px 0px 50px #888888;
-	width : 400px;
-	height : 275px;
-	text-shadow: 0px 0px 15px #00E6E6;
-	padding : 10px;
-	position : absolute;
-	left : 450px;
-	top : 200px;
-	opacity : 1;
-}
-
-div.sign{
-	background : -webkit-linear-gradient(gray, rgba(0,0,0,0.5));
-	border-radius : 40px;
-	border : 4px outset #a1a1a1;
-	box-shadow : 0px 0px 50px #888888;
-	text-shadow: 0px 0px 15px #00E6E6;
-	color : #00E6E6;
-	font-size : 30px;
-	width : 0px;
-	height : 0px;
-	padding : 30px;
-	position : absolute;
-	left : 600px;
-	top : 150px;
-	opacity : 0;
-}
-
-div.player{
-	border-radius : 40px;
-	border : 4px outset #7788FF;
-	background : -webkit-linear-gradient(rgb(70,100,255), rgba(0,0,0,0.5));
-	box-shadow : 0px 0px 30px #7788FF;
-	width : 120px;
-	height : 350px;
-	padding : 20px;
-	position : absolute;
-	left : 1100px;
-	top : -600px;
-	opacity : 0;
-}
-
-div.player_div{
-	border-radius : 40px;
-	border : 4px outset #7788FF;
-	background : -webkit-linear-gradient(rgb(70,100,255), rgba(0,0,0,0.5));
-	box-shadow : 0px 0px 30px #7788FF;
-	text-shadow: 0px 0px 15px #00E6E6;
-	font-size : 30px;
-	color : #00E6E6;
-	width : 600px;
-	height : 370px;
-	padding : 20px;
-	position : absolute;
-	left : -800px;
-	top : 120px;
-	margin-top : 1px;
-	margin-bottom : 1px;
-	opacity : 0;
-}
-
-div.mgr{
-	border-radius : 40px;
-	border : 4px outset #CC88FF;
-	background : -webkit-linear-gradient(rgb(150,100,255), rgba(0,0,0,0.5));
-	box-shadow : 0px 0px 30px #CC88FF;
-	width : 120px;
-	height : 120px;
-	padding : 20px;
-	position : absolute;
-	left : 900px;
-	top : -600px;
-	opacity : 0;
-}
-
-div.mgr_div{
-	border-radius : 40px;
-	border : 4px outset #CC88FF;
-	background : -webkit-linear-gradient(rgb(150,100,255), rgba(0,0,0,0.5));
-	box-shadow : 0px 0px 30px #CC88FF;
-	text-shadow: 0px 0px 15px #00E6E6;
-	font-size : 30px;
-	color : #00E6E6;
-	width : 600px;
-	height : 370px;
-	padding : 20px;
-	position : absolute;
-	left : -800px;
-	top : 120px;
-	opacity : 0;
-}
-
-div.admin{
-	border-radius : 40px;
-	border : 4px outset #FF5555;
-	background : -webkit-linear-gradient(rgb(255,50,50), rgba(0,0,0,0.5));
-	box-shadow : 0px 0px 30px #FF5555;
-	width : 120px;
-	height : 120px;
-	padding : 20px;
-	position : absolute;
-	left : 900px;
-	top : -600px;
-	opacity : 0;
-}
-
-div.admin_div{
-	border-radius : 40px;
-	border : 4px outset #FF5555;
-	background : -webkit-linear-gradient(rgb(255,50,50), rgba(0,0,0,0.5));
-	box-shadow : 0px 0px 30px #FF5555;
-	font-size : 30px;
-	color : #00E6E6;
-	width : 600px;
-	height : 370px;
-	padding : 20px;
-	position : absolute;
-	left : -800px;
-	top : 120px;
-	opacity : 0;
-}
-
-div.game{
-	background : url(https://tommyboys0107.github.io/image/warning.jpg);
-	border-radius : 40px;
-	border : 4px outset #7788FF;
-	box-shadow : 0px 0px 30px #7788FF;
-	text-shadow: 0px 0px 15px #00E6E6;
-	font-size : 30px;
-	color : #00E6E6;
-	width : 700px;
-	height : 400px;
-	padding : 20px;
-	position : absolute;
-	left : -850px;
-	top : 120px;
-	margin-top : 1px;
-	margin-bottom : 1px;
-	opacity : 0;
-}
-
 
 textarea{
-	background : -webkit-linear-gradient(white, rgba(128,128,128,0.5));
-	font-family : "Iceland";
-	font-size : 25px;
+	background: linear-gradient(white, rgba(128,128,128,0.5));
+	font-family: "Iceland";
+	font-size: 25px;
 }
 
 input{
-	background : -webkit-linear-gradient(white, rgba(128,128,128,0.5));
-	font-family : "Iceland";
+	background: linear-gradient(white, rgba(128,128,128,0.5));
+	font-family: "Iceland";
 }
 
 input.info{
-	font-size : 30px;
+	font-size: 30px;
 }
 
 input.reason{
-	font-size : 30px;
-	width : 600px;
+	font-size: 30px;
+	width: 600px;
 }
 
 input.button{
 	text-shadow: 0px 0px 15px #FF0000;
-	font-size : 30px;
-	text-align : center;
-	margin-left : 5px;
-	margin-right : 5px;
-	margin-top : 10px;
-	margin-bottom : 10px;
-	width : 110px;
-	height : 40px;
-	-webkit-transition : width 0.5s, height 0.5s;
-	-webkit-transition-delay : 0.2s;
+	font-size: 30px;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 110px;
+	height: 40px;
+	transition: width 0.5s, height 0.5s;
+	transition-delay: 0.2s;
 }
 
 input.button:hover{
-	width : 120px;
-	height : 50px;
+	width: 120px;
+	height: 50px;
 }
 
 select{
-	background : -webkit-linear-gradient(white, rgba(128,128,128,0.5));
-	font-family : "Iceland";
-	font-size : 30px;
+	background: linear-gradient(white, rgba(128,128,128,0.5));
+	font-family: "Iceland";
+	font-size: 30px;
 }
 
 table{
-	-webkit-transition : width 0.5s, height 0.5s, -webkit-transform 1s, -webkit-opacity 1s;
-	background : -webkit-linear-gradient(white, rgba(128,128,128,0.5));
-	border-radius : 20px;
-	border : 4px outset #7788FF;
-	box-shadow : 0px 0px 0px #7788FF;
+	transition: width 0.5s, height 0.5s, transform 1s, opacity 1s;
+	background: linear-gradient(white, rgba(128,128,128,0.5));
+	border-radius: 20px;
+	border: 4px outset #7788FF;
+	box-shadow: 0px 0px 0px #7788FF;
 	text-shadow: 0px 0px 1px #00E6E6;
-	font-family : "Iceland";
-	font-size : 30px;
-	position : absolute;
-	left : -1000px;
-	top : -40px;
-	opacity : 1;
+	font-family: "Iceland";
+	font-size: 30px;
+	position: absolute;
+	left: -1000px;
+	top: -40px;
+	opacity: 1;
 	
 }
