@@ -9,7 +9,7 @@ body{
 	background-repeat: repeat;
 	background-attachment: scroll;   
 	margin: 0;
-	padding: 25px;
+	padding: 50px;
 }
 
 h1{
@@ -25,15 +25,15 @@ nav{
 }
 
 nav ul{
+	float: right;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	position: fixed;
 }
 
-nav li{
+nav ul li{
 	display: inline;
-	float: right;
 }
 
 a{
