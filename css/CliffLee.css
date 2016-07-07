@@ -18,6 +18,46 @@ h1{
 	text-shadow: 4px 4px 8px #97E5FF;
 }
 
+nav{
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0.0, 0.0, 0.0, 0.055);
+	display: block;
+	margin: 8px 22px 8px 22px;
+	width: 90%;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+}
+
+nav li{
+	display: inline;
+	float: right;
+}
+
+a{
+	border: 1px solid #ffffff;
+	border-radius: 2px;
+	border-color: #fffff;
+	color: #FFDA88;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: 8px;
+}
+
+a: hover{
+	background-color: #000000;
+}
+
+.active{
+	background-color: #4E4E4E;
+}
+
 p{
 	font-family: "Iceland";
 	word-wrap: break-word;
