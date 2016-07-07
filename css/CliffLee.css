@@ -20,12 +20,12 @@ h1{
 
 nav{
 	display: block;
+	float: right;
 	margin: 8px 22px 8px 22px;
 	width: 80%;
 }
 
 nav ul{
-	float: right;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
