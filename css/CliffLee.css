@@ -16,7 +16,9 @@ h1{
 	font-family: "Iceland";
 	font-size: 100px;
 	font-style: normal;
+	float: left;
 	color: #97E5FF;
+	display: inline;
 	text-shadow: 4px 4px 8px #97E5FF;
 }
 
