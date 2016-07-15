@@ -17,6 +17,7 @@ body.home{
 header{
 	position: fixed;
 	top: 20px;
+	width: 100%;
 }
 
 h1{
