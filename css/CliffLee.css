@@ -10,7 +10,7 @@ body.home{
 	background-color: #2E2E2E;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100%;
+	background-size: auto 100%;
 	margin: auto;
 }
 
