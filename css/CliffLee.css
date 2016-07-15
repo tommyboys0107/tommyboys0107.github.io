@@ -9,12 +9,11 @@ body{
 	background-repeat: repeat;
 	background-attachment: scroll;   
 	margin: 0;
-	padding: 25px;
 }
 
 header{
 	background-image: url(https://tommyboys0107.github.io/image/Header.jpg);
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 }
