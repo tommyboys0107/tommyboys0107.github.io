@@ -12,6 +12,13 @@ body{
 	padding: 25px;
 }
 
+header{
+	background-image: url(https://tommyboys0107.github.io/image/Header.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 h1{
 	font-family: "Iceland";
 	font-size: 100px;
@@ -60,6 +67,11 @@ p{
 
 span.important{
 	color: #FF8A8A;
+}
+
+img{
+	display: block;
+	margin: auto;
 }
 
 .center{
