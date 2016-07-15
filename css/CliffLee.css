@@ -1,8 +1,17 @@
 body{
 	background-color: #2E2E2E;
 	background-repeat: repeat;
-	background-attachment: scroll;   
-	margin: 0;
+	background-attachment: scroll;
+	margin: auto;
+}
+
+body.home{
+	background-image: url(https://tommyboys0107.github.io/image/HomeIntro.jpg);
+	background-color: #2E2E2E;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: 100%;
+	margin: auto;
 }
 
 header{
