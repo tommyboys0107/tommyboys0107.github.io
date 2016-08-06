@@ -1,16 +1,9 @@
 body{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1em; /* 1em = 16px*/
 	background-color: #2E2E2E;
 	background-repeat: repeat;
 	background-attachment: scroll;
-	margin: auto;
-}
-
-body.home{
-	background-image: url(https://tommyboys0107.github.io/image/HomeIntro.jpg);
-	background-color: #2E2E2E;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% auto;
 	margin: auto;
 }
 
@@ -22,15 +15,16 @@ header{
 
 h1{
 	font-family: "Iceland";
-	font-size: 80px;
+	font-size: 5em; /* 1em = 16px*/
 	font-style: normal;
 	color: #97E5FF;
-	display: inline-block;
+	display: inline;
 	text-shadow: 4px 4px 8px #97E5FF;
+	margin: 20px 0px 0px 40px;
 }
 
 nav{
-	margin: auto;
+	margin: 20px 40px 0px 0px;
 	float: right;
 }
 
@@ -41,30 +35,44 @@ nav ul{
 }
 
 nav li{
+	padding-left: 10px;
 	display: inline-block;
 }
 
 a{
-	border: 2px solid #ffffff;
+	font-size: 1.25em; /* 1em = 16px*/
+	font-weight: bold;
+	border: 2px groove #ffffff;
+	border-radius: 3px;
+	box-shadow: 0px 10px 10px #000000;
 	color: #FFDA88;
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	padding: 12px;
+	padding: 16px;
+	width: 125px;
 }
 
 a:hover{
-	background-color: #000000;
+	background-color: #333333;
 }
 
-.active{
+a.currentPage{
+	background-color: #4E4E4E;
+}
+
+a:active{
 	background-color: #4E4E4E;
 }
 
 p{
+	text-align: justify;
+	text-indent: 20px;
+	line-height: 1.2;
 	font-family: "Iceland";
 	word-wrap: break-word;
 	color: #FFDA8B;
+	overflow: auto;
 }
 
 span.important{
@@ -81,75 +89,10 @@ img{
 	height: auto;
 }
 
-.center{
-	text-align: center;
+.hidden{
+	display: none;
 }
 
-.left{
-	text-align: left;
-}
-
-.right{
-	text-align: right;
-}
-
-textarea{
-	background: linear-gradient(white, rgba(128,128,128,0.5));
-	font-family: "Iceland";
-	font-size: 25px;
-}
-
-input{
-	background: linear-gradient(white, rgba(128,128,128,0.5));
-	font-family: "Iceland";
-}
-
-input.info{
-	font-size: 30px;
-}
-
-input.reason{
-	font-size: 30px;
-	width: 600px;
-}
-
-input.button{
-	text-shadow: 0px 0px 15px #FF0000;
-	font-size: 30px;
-	text-align: center;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width: 110px;
-	height: 40px;
-	transition: width 0.5s, height 0.5s;
-	transition-delay: 0.2s;
-}
-
-input.button:hover{
-	width: 120px;
-	height: 50px;
-}
-
-select{
-	background: linear-gradient(white, rgba(128,128,128,0.5));
-	font-family: "Iceland";
-	font-size: 30px;
-}
-
-table{
-	transition: width 0.5s, height 0.5s, transform 1s, opacity 1s;
-	background: linear-gradient(white, rgba(128,128,128,0.5));
-	border-radius: 20px;
-	border: 4px outset #7788FF;
-	box-shadow: 0px 0px 0px #7788FF;
-	text-shadow: 0px 0px 1px #00E6E6;
-	font-family: "Iceland";
-	font-size: 30px;
-	position: absolute;
-	left: -1000px;
-	top: -40px;
-	opacity: 1;
-
+.hiddenWithLayout{
+	visibility: hidden;
 }
