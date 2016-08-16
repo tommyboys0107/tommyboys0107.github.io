@@ -1,3 +1,13 @@
+@keyframes navigationBar{
+	0%{
+		top: -200px;
+	}
+
+	100%{
+		top: 0px;
+	}
+}
+
 html{
 	background-image: url(/image/HomeIntro.jpg);
 	background-color: #232323;
@@ -30,6 +40,10 @@ h1{
 }
 
 nav{
+	animation-fill-mode: forwards;
+	animation-name: navigationBar;
+	animation-duration: 1.5s;
+	position: relative;
 	margin: 20px 40px 0px 0px;
 	float: right;
 }
