@@ -1,5 +1,5 @@
 @media screen and (min-width: 480px){
-	
+
 }
 
 @keyframes navigationBar{
@@ -12,9 +12,18 @@
 	}
 }
 
+:root{
+	--colorGray: #232323;
+	--colorBlue: #97E5FF;
+	--colorOrange: #FFDA8B;
+	--colorRed:  #FF8A8A;
+	--normalFontSize: 1em;  /* 1em = 16px*/
+	--fontFamily: Helvetica, Arial, sans-serif;
+}
+
 html{
 	background-image: url(/image/HomeIntro.jpg);
-	background-color: #232323;
+	background-color: var(--colorGray);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: contain;
@@ -23,8 +32,8 @@ html{
 
 body{
 	display: flex;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 1em; /* 1em = 16px*/
+	font-family: var(--fontFamily);
+	font-size: var(--normalFontSize);
 	margin: auto;
 }
 
@@ -38,11 +47,11 @@ header{
 }
 
 h1{
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 5em; /* 1em = 16px*/
+	font-family: var(--fontFamily);
+	font-size: calc(5 * var(--normalFontSize));
 	font-style: normal;
-	color: #97E5FF;
-	text-shadow: 4px 4px 8px #97E5FF;
+	color: var(--colorBlue);
+	text-shadow: 4px 4px 8px var(--colorBlue);
 	margin: 20px 0px 0px 60px;
 }
 
@@ -74,13 +83,14 @@ nav li{
 }
 
 a{
-	font-size: 1.25em; /* 1em = 16px*/
+	font-family: var(--fontFamily);
+	font-size: calc(1.25 * var(--normalFontSize));
 	font-weight: normal;
 	border: 2px groove #ffffff;
 	border-radius: 4px;
 	box-shadow: 0px 0px 7px grey;
 	background: rgba(51,51,51, 0.5);
-	color: #FFDA88;
+	color: var(--colorOrange);
 	text-align: center;
 	text-decoration: none;
 	transition-property: background;
@@ -110,15 +120,15 @@ p{
 	text-align: justify;
 	text-indent: 20px;
 	line-height: 1.2;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: var(--fontFamily);
 	word-wrap: break-word;
 	word-break: keep-all;
-	color: #FFDA8B;
+	color: var(--colorOrange);
 	overflow: auto;
 }
 
 span.important{
-	color: #FF8A8A;
+	color: var(--colorRed);
 }
 
 .responsiveFull{
