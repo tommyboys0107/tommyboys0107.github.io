@@ -13,17 +13,25 @@
 }
 
 :root{
-	--colorGray: #232323;
-	--colorBlue: #97E5FF;
-	--colorOrange: #FFDA8B;
-	--colorRed:  #FF8A8A;
+	--themeGray: hsla(180, 8%, 15%, 1.0);
+	--themeRed: hsla(2, 100%, 63%, 1.0);
+	--themeGreen: hsla(127, 67%, 64%, 1.0);
+	--themeBlue: hsla(233, 56%, 64%, 1.0);
+	--themeWhite: hsla(0, 0%, 96%, 1.0);
+	--themeClear: hsla(0, 0%, 0%, 0.0);
+
+	--linkBackground: hsla(180, 8%, 15%, 0.8);
+	--linkCurrentPage: hsla(233, 56%, 64%, 0.3);
+	--linkHover: hsla(2, 100%, 63%, 0.3);
+	--linkActive: hsla(233, 56%, 64%, 0.3);
+
 	--normalFontSize: 1em;  /* 1em = 16px*/
 	--fontFamily: Helvetica, Arial, sans-serif;
 }
 
 html{
-	background-image: url(/image/HomeIntro.jpg);
-	background-color: var(--colorGray);
+	background-image: url(../image/HomeIntro.jpg);
+	background-color: var(--themeGray);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: contain;
@@ -50,8 +58,8 @@ h1{
 	font-family: var(--fontFamily);
 	font-size: calc(5 * var(--normalFontSize));
 	font-style: normal;
-	color: var(--colorBlue);
-	text-shadow: 4px 4px 8px var(--colorBlue);
+	color: var(--themeBlue);
+	text-shadow: 4px 4px 8px var(--themeBlue);
 	margin: 20px 0px 0px 60px;
 }
 
@@ -89,8 +97,8 @@ a{
 	border: 2px groove #ffffff;
 	border-radius: 4px;
 	box-shadow: 0px 0px 7px grey;
-	background: rgba(51,51,51, 0.5);
-	color: var(--colorOrange);
+	background: var(--linkBackground);
+	color: var(--themeWhite);
 	text-align: center;
 	text-decoration: none;
 	transition-property: background;
@@ -102,18 +110,18 @@ a{
 }
 
 a:hover{
-	background: #333333;
-	background: linear-gradient(rgba(0, 0, 0, 0), rgba(255,218,139, 0.2));
+	background: var(--linkHover);
+	background: linear-gradient(var(--themeClear), var(--linkHover));
 }
 
 a.currentPage{
-	background: #4E4E4E;
-	background: linear-gradient(rgba(0, 0, 0, 0), rgba(151,229,255, 0.2));
+	background: var(--linkCurrentPage);
+	background: linear-gradient(var(--themeClear), var(--linkCurrentPage));
 }
 
 a:active{
-	background: #4E4E4E;
-	background: linear-gradient(rgba(0, 0, 0, 0), rgba(151,229,255, 0.4));
+	background: var(--linkActive);
+	background: linear-gradient(var(--themeClear), var(--linkActive));
 }
 
 p{
@@ -123,12 +131,12 @@ p{
 	font-family: var(--fontFamily);
 	word-wrap: break-word;
 	word-break: keep-all;
-	color: var(--colorOrange);
+	color: var(--themeWhite);
 	overflow: auto;
 }
 
 span.important{
-	color: var(--colorRed);
+	color: var(--themeRed);
 }
 
 .responsiveFull{
