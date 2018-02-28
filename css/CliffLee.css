@@ -1,6 +1,6 @@
-@media screen and (min-width: 480px){
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-}
+@media screen and (min-width: 480px){
 
 @keyframes navigationBar{
 	0%{
@@ -26,7 +26,7 @@
 	--linkActive: hsla(233, 56%, 64%, 0.3);
 
 	--normalFontSize: 1em;  /* 1em = 16px*/
-	--fontFamily: Helvetica, Arial, sans-serif;
+	--fontFamily: 'Noto Sans TC', Helvetica, sans-serif;
 }
 
 html{
