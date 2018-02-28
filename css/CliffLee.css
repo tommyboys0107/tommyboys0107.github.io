@@ -58,8 +58,8 @@ h1{
 	font-family: var(--fontFamily);
 	font-size: calc(5 * var(--normalFontSize));
 	font-style: normal;
-	color: var(--themeBlue);
-	text-shadow: 4px 4px 8px var(--themeBlue);
+	color: var(--themeWhite);
+	text-shadow: 0px 0px 8px var(--themeWhite);
 	margin: 20px 0px 0px 60px;
 }
 
@@ -88,25 +88,28 @@ nav ul{
 
 nav li{
 	display: inline-flex;
+	box-shadow: 0px 0px 8px var(--themeWhite);
+	margin: 1px;
+}
+
+nav a{
+	color: var(--themeWhite);
+	padding: 16px;
+	width: 150px;
+	text-shadow: 0px 0px 6px var(--themeWhite);
 }
 
 a{
 	font-family: var(--fontFamily);
-	font-size: calc(1.25 * var(--normalFontSize));
+	font-size: calc(1.50 * var(--normalFontSize));
 	font-weight: normal;
-	border: 2px groove #ffffff;
-	border-radius: 4px;
-	box-shadow: 0px 0px 7px grey;
 	background: var(--linkBackground);
-	color: var(--themeWhite);
+	color: var(--themeBlue);
 	text-align: center;
 	text-decoration: none;
 	transition-property: background;
 	transition-duration: 300ms;
 	transition-timing-function: ease-out;
-	padding: 16px;
-	margin: 8px;
-	width: 125px;
 }
 
 a:hover{
@@ -135,7 +138,7 @@ p{
 	overflow: auto;
 }
 
-span.important{
+.important{
 	color: var(--themeRed);
 }
 
