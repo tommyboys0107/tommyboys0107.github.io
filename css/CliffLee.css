@@ -90,8 +90,6 @@ nav ul{
 
 nav li{
 	display: inline-flex;
-	box-shadow: 0px 0px 0.5rem var(--themeWhite);
-	margin: 1px;
 }
 
 nav a{
@@ -99,6 +97,7 @@ nav a{
 	padding: 1rem;
 	width: 9rem;
 	text-shadow: 0px 0px 0.4rem var(--themeWhite);
+	box-shadow: 0px 0px 0.5rem var(--themeWhite);
 }
 
 a{
