@@ -42,10 +42,12 @@ html{
 	background-position: top;
 }
 
+body{
+	margin: 0;
+}
+
 header{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	display: block;
 	position: relative;
 	width: 100%;
 }
@@ -60,37 +62,49 @@ h1{
 }
 
 nav{
-	display: inline-flex;
+	display: block;
 	animation-fill-mode: forwards;
 	animation-name: navigationBar;
 	animation-duration: 1.5s;
 	position: relative;
 	width: 100%;
-	float: right;
+	margin: 0;
 }
 
 nav ul{
-	display: inline-flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-items: flex-start;
-	align-content: flex-start;
+	display: block;
+	overflow: hidden;
 	list-style-type: none;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
 
-nav li{
-	display: inline-flex;
+nav ul li{
+	float: left;
+}
+
+nav ul li.floatRight{
+	float: right;
 }
 
 nav a{
+	display: block;
 	color: var(--themeWhite);
 	padding: 1rem;
-	width: 9rem;
+	width: auto;
+	height: auto;
+	margin-left: 0.05rem;
+	margin-right: 0.05rem;
+	margin-bottom: 0.5rem;
 	text-shadow: 0px 0px 0.4rem var(--themeWhite);
 	box-shadow: 0px 0px 0.5rem var(--themeWhite);
+}
+
+nav a.logo{
+	padding: 0.36rem;
+	width: auto;
+	height: auto;
 }
 
 a{
@@ -110,7 +124,7 @@ a:hover{
 	background: linear-gradient(var(--themeClear), var(--linkHover));
 }
 
-a.currentPage{
+a.currentPage, a#currentPage{
 	background: var(--linkCurrentPage);
 	background: linear-gradient(var(--themeClear), var(--linkCurrentPage));
 }
@@ -127,6 +141,14 @@ img{
 	margin: auto;
 }
 
+img.logo{
+	display: block;
+	clear: both;
+	width: auto;
+	height: 3.5rem;
+	margin: auto;
+}
+
 p{
 	text-align: justify;
 	text-indent: 1rem;
@@ -135,14 +157,6 @@ p{
 	word-break: keep-all;
 	color: var(--themeWhite);
 	overflow: auto;
-}
-
-.logo{
-	display: block;
-	clear: both;
-	width: 10rem;
-	height: 10rem;
-	margin: auto;
 }
 
 .important{
