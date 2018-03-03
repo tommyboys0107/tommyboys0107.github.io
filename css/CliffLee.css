@@ -42,18 +42,11 @@ html{
 	background-position: top;
 }
 
-body{
-	display: flex;
-	font-size: var(--normalFontSize);
-	margin: auto;
-}
-
 header{
-	display: inline-flex;
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	position: fixed;
-	top: 40px;
+	position: relative;
 	width: 100%;
 }
 
@@ -63,7 +56,7 @@ h1{
 	color: var(--themeWhite);
 	text-shadow: 0px 0px 0.5rem var(--themeWhite);
 	text-align: center;
-	margin: 0px 0px 0px 0px;
+	margin: auto;
 }
 
 nav{
@@ -72,7 +65,7 @@ nav{
 	animation-name: navigationBar;
 	animation-duration: 1.5s;
 	position: relative;
-	width: 40%;
+	width: 100%;
 	float: right;
 }
 
@@ -127,6 +120,13 @@ a:active{
 	background: linear-gradient(var(--themeClear), var(--linkActive));
 }
 
+img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+
 p{
 	text-align: justify;
 	text-indent: 1rem;
@@ -135,6 +135,14 @@ p{
 	word-break: keep-all;
 	color: var(--themeWhite);
 	overflow: auto;
+}
+
+.logo{
+	display: block;
+	clear: both;
+	width: 10rem;
+	height: 10rem;
+	margin: auto;
 }
 
 .important{
@@ -152,4 +160,41 @@ p{
 
 .hiddenWithLayout{
 	visibility: hidden;
+}
+
+.row{
+	display: flex;
+	width: 100%
+}
+
+.row::after{
+	display: block;
+	clear: both;
+	content: "";
+}
+
+/* Total number add up to 12. */
+.col-1{width: 8.33%;}
+.col-2{width: 16.66%;}
+.col-3{width: 25%;}
+.col-4{width: 33.33%;}
+.col-5{width: 41.66%;}
+.col-6{width: 50%;}
+.col-7{width: 58.33%;}
+.col-8{width: 66.66%;}
+.col-9{width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+
+*{
+	box-sizing: border-box; /* Make margin, border, and padding count in total dimension. */
+}
+
+[class*="col-"]{
+	border: 2px;
+	border-style: solid;
+	border-color: var(--themeRed);
+	padding: 15px;
+	float: left;
 }
