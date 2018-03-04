@@ -128,15 +128,14 @@ a:active{
 	transition-duration: 0ms;
 }
 
-img{
+figure.fullScreen{
 	display: block;
 	max-width: 100%;
 	height: auto;
 	margin: auto;
 }
 
-
-img.fullScreen{
+img{
 	display: block;
 	max-width: 100%;
 	height: auto;
