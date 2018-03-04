@@ -18,12 +18,12 @@
 	--themeGreen: hsla(127, 67%, 64%, 1.0);
 	--themeBlue: hsla(233, 56%, 64%, 1.0);
 	--themeWhite: hsla(0, 0%, 96%, 1.0);
-	--themeClear: hsla(0, 0%, 0%, 0.9);
+	--themeClear: hsla(180, 8%, 15%, 0.9);
 
 	--linkBackground: hsla(180, 8%, 15%, 0.9);
-	--linkCurrentPage: hsla(233, 56%, 64%, 0.9);
-	--linkHover: hsla(2, 100%, 63%, 0.9);
-	--linkActive: hsla(233, 56%, 64%, 0.9);
+	--linkCurrentPage: hsla(233, 56%, 64%, 0.8);
+	--linkHover: hsla(2, 100%, 63%, 0.8);
+	--linkActive: hsla(233, 56%, 64%, 0.8);
 
 	--headerFontSize: 4rem;
 	--navigationFontSizeScalar: 1.2;
@@ -114,23 +114,26 @@ a{
 	text-align: center;
 	text-decoration: none;
 	transition-property: background;
-	transition-duration: 2000ms;
+	transition-duration: 1000ms;
 	transition-timing-function: ease-out;
 }
 
 a:hover{
 	background: var(--linkHover);
-	background: linear-gradient(var(--themeClear), var(--linkHover));
+	background: linear-gradient(var(--themeClear), var(--themeClear), var(--themeClear), var(--linkHover));
+	transition-duration: 0ms;
 }
 
 a.currentPage, a#currentPage{
 	background: var(--linkCurrentPage);
-	background: linear-gradient(var(--themeClear), var(--linkCurrentPage));
+	background: linear-gradient(var(--themeClear), var(--themeClear), var(--themeClear), var(--linkCurrentPage));
+	transition-duration: 0ms;
 }
 
 a:active{
 	background: var(--linkActive);
-	background: linear-gradient(var(--themeClear), var(--linkActive));
+	background: linear-gradient(var(--themeClear), var(--themeClear), var(--themeClear), var(--linkActive));
+	transition-duration: 0ms;
 }
 
 img{
