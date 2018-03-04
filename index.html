@@ -18,19 +18,36 @@
 
     <body>
         <nav>
-            <ul>
+            <ul id="navigationList">
+                <li class = "dropDownMenu"><a href = "javascript:void(0);" onclick = "ToggleNavigationMenu()">&#9776;</a></li>
                 <li><a id = "currentPage" class = "logo" href = "#"><img class = "logo" src = "image/CliffLeeCLStudioLogo.png" alt = "Cliff Lee CL Studio's Logo" width = "300" height = "300"></a></li>
                 <li><a href = "about.html">About</a></li>
                 <li><a href = "portfolio.html">Portfolio</a></li>
                 <li class = "floatRight"><a href = "contact.html">Contact</a></li>
             </ul>
         </nav>
+
+        <script>
+            function ToggleNavigationMenu(){
+                var navigationList = document.getElementById("navigationList");
+
+                if(navigationList.className === ""){
+                    navigationList.className = "responsiveNavigationList";
+                }
+                else {
+                    navigationList.className = "";
+                }
+            }
+        </script>
+
         <section>
             <header>
-                <h1>-----測試-----</h1>
+                <h1>----測試中----</h1>
                 <p>This is a test string.</p>
             </header>
-
+            <figure>
+                <img src = "image/HomeIntro.jpg" alt = "Cliff Lee CL Studio's Logo" width = "1920" height = "1080">
+            </figure>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quas ipsum dolor, non ipsa enim, aut inventore odit, ut distinctio accusantium porro delectus a! Ea accusantium itaque quam fugit! Excepturi.</p>
             <p>Culpa unde veritatis nulla ratione fugiat, quae ipsam dolores, aliquid itaque expedita perferendis voluptas iste sunt, amet, repudiandae quia perspiciatis quas cupiditate corrupti quasi. Itaque dolores officia sapiente modi neque?</p>
             <p>Amet iusto voluptates excepturi minus repellat rerum asperiores, neque eveniet at, praesentium sint magni a quis dolor aut perferendis distinctio magnam! Eaque, inventore consequatur velit commodi odit asperiores molestiae laudantium?</p>

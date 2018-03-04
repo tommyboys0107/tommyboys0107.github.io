@@ -1,18 +1,10 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-@media screen and (min-width: 480px){
-
-@keyframes navigationBar{
-	0%{
-		top: -200px;
-	}
-
-	100%{
-		top: 0px;
-	}
-}
-
 :root{
+	font-size: 20px;
+	font-family: var(--fontFamily);
+
+	/* Variables */
 	--themeGray: hsla(180, 8%, 15%, 1.0);
 	--themeRed: hsla(2, 100%, 63%, 1.0);
 	--themeGreen: hsla(127, 67%, 64%, 1.0);
@@ -31,19 +23,13 @@
 	--fontFamily: 'Noto Sans TC', Helvetica, sans-serif;
 }
 
-html{
-	font-size: 20px;
-	font-family: var(--fontFamily);
-	background-image: url(../image/HomeIntro.jpg);
+body{
+	margin: 3rem 0 0 0;
 	background-color: var(--themeGray);
-	background-repeat: no-repeat;
+	background-repeat: space;
 	background-attachment: fixed;
 	background-size: contain;
-	background-position: top;
-}
-
-body{
-	margin-top: 4rem;
+	background-position: center;
 }
 
 header{
@@ -63,30 +49,36 @@ h1{
 
 nav{
 	display: block;
-	animation-fill-mode: forwards;
-	animation-name: navigationBar;
-	animation-duration: 1.5s;
-	position: fixed;
 	width: 100%;
 	margin: 0;
-	z-index: 50;
 }
 
 nav ul{
 	display: block;
+	position: fixed;
+	animation-fill-mode: forwards;
+	animation-name: navigationBar;
+	animation-duration: 1.5s;
 	overflow: hidden;
 	list-style-type: none;
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	z-index: 50;
 }
 
 nav ul li{
 	float: left;
+	z-index: inherit;
 }
 
 nav ul li.floatRight{
 	float: right;
+}
+
+nav ul li.dropDownMenu{
+	width: 3rem;
+	display: none;
 }
 
 nav a{
@@ -137,6 +129,14 @@ a:active{
 }
 
 img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+
+img.fullScreen{
 	display: block;
 	max-width: 100%;
 	height: auto;
@@ -213,4 +213,53 @@ p{
 	border-color: var(--themeRed);
 	padding: 15px;
 	float: left;
+}
+
+/* RWD */
+@media screen and (max-width: 680px){
+	nav ul li:not(:nth-child(2)){
+		display: none;
+	}
+
+	nav ul li.dropDownMenu{
+		display: block;
+		float: right;
+	}
+
+	nav ul.responsiveNavigationList{
+		position: fixed;
+		animation-fill-mode: both;
+		animation-name: navigationBarResponsive;
+		animation-duration: 1.0s;
+		animation-direction: forwards;
+	}
+
+	nav ul.responsiveNavigationList li{
+		display: block;
+		float: right;
+		clear: right;
+	}
+}
+
+/* Keyframs */
+@keyframes navigationBar{
+	0%{
+		top: -200px;
+	}
+
+	100%{
+		top: 0px;
+	}
+}
+
+@keyframes navigationBarResponsive {
+	0%{
+		top: 0px;
+		right: -200px;
+	}
+
+	100%{
+		top: 0px;
+		right: 0px;
+	}
 }
