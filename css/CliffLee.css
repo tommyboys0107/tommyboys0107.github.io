@@ -5,10 +5,12 @@
 	font-family: var(--fontFamily);
 
 	/* Variables */
+	--themeBlack: hsla(180, 8%, 8%, 1.0);
 	--themeGray: hsla(180, 8%, 15%, 1.0);
 	--themeRed: hsla(2, 100%, 63%, 1.0);
 	--themeGreen: hsla(127, 67%, 64%, 1.0);
 	--themeBlue: hsla(233, 56%, 64%, 1.0);
+	--themeDarkerWhite: hsla(0, 0%, 50%, 1.0);
 	--themeWhite: hsla(0, 0%, 96%, 1.0);
 	--themeClear: hsla(180, 8%, 15%, 0.9);
 
@@ -17,7 +19,7 @@
 	--linkHover: hsla(2, 100%, 63%, 0.8);
 	--linkActive: hsla(233, 56%, 64%, 0.8);
 
-	--headerFontSize: 4rem;
+	--headerFontSize: 3rem;
 	--navigationFontSizeScalar: 1.2;
 	--normalFontSize: 1rem;
 	--fontFamily: 'Noto Sans TC', Helvetica, sans-serif;
@@ -26,10 +28,27 @@
 body{
 	margin: 3rem 0 0 0;
 	background-color: var(--themeGray);
+	background: linear-gradient(var(--themeGray), var(--themeBlack));
 	background-repeat: space;
-	background-attachment: fixed;
 	background-size: contain;
 	background-position: center;
+}
+
+section{
+	width: 100%;
+	margin: auto;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+footer{
+	margin: 0;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+footer p{
+	color: var(--themeDarkerWhite);
 }
 
 header{
@@ -38,11 +57,15 @@ header{
 	width: 100%;
 }
 
+hr{
+	border-color: var(--themeBlue);
+}
+
 h1{
 	font-size: var(--headerFontSize);
 	font-style: normal;
 	color: var(--themeWhite);
-	text-shadow: 0px 0px 0.5rem var(--themeWhite);
+	text-shadow: 0px 0px 0.4rem var(--themeWhite);
 	text-align: center;
 	margin: auto;
 }
@@ -151,6 +174,8 @@ img.logo{
 }
 
 p{
+	padding-left: 5%;
+	padding-right: 5%;
 	text-align: justify;
 	text-indent: 1rem;
 	line-height: 1.5;
@@ -158,6 +183,23 @@ p{
 	word-break: keep-all;
 	color: var(--themeWhite);
 	overflow: auto;
+}
+
+.videoContainer{
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+}
+
+.videoContainer iframe,
+.videoContainer object,
+.videoContainer embed{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .important{
@@ -180,6 +222,8 @@ p{
 .row{
 	display: flex;
 	width: 100%
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .row::after{
@@ -207,10 +251,6 @@ p{
 }
 
 [class*="col-"]{
-	border: 2px;
-	border-style: solid;
-	border-color: var(--themeRed);
-	padding: 15px;
 	float: left;
 }
 
